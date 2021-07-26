@@ -46,12 +46,15 @@ public class SeeInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_info);
 
+        // 프로필 이미지 세팅
         iv_profileIcon = (ImageView) findViewById(R.id.iv_profileIcon);
         setProfileImage();
 
+        // 이름 세팅
         tv_name = (TextView) findViewById(R.id.tv_name);
         setName();
 
+        // 솔로 랭크 정보 세팅
         iv_soloTierImage = (ImageView) findViewById(R.id.iv_soloTierImage);
         tv_soloTier = (TextView) findViewById(R.id.tv_soloTier);
         tv_soloRank = (TextView) findViewById(R.id.tv_soloRank);
@@ -59,6 +62,7 @@ public class SeeInfoActivity extends AppCompatActivity {
         tv_soloWinLose = (TextView) findViewById(R.id.tv_soloWinLose);
         setSolo();
 
+        // 자유 랭크 정보 세팅
         iv_flexTierImage = (ImageView) findViewById(R.id.iv_flexTierImage);
         tv_flexTier = (TextView) findViewById(R.id.tv_flexTier);
         tv_flexRank = (TextView) findViewById(R.id.tv_flexRank);
@@ -68,8 +72,45 @@ public class SeeInfoActivity extends AppCompatActivity {
 
     }
 
+    private void setProfileImage() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                try{
+                    URL url = new URL("http://ddragon.leagueoflegends.com/cdn/6.3.1/img/profileicon/" + MainActivity.profileIconId + ".png");
+
+                    HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+
+                    connection.setDoInput(true);
+                    connection.connect();
+
+                    InputStream is = connection.getInputStream();
+                    bitmap = BitmapFactory.decodeStream(is);
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
+
+        try {
+            thread.join();
+
+            iv_profileIcon.setImageBitmap(bitmap);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 소환사 이름 세팅
+    private void setName() {
+        tv_name.setText(MainActivity.name);
+    }
+
     private void setSolo() {
-        System.out.println("작동");
         // 솔로랭크 이미지
         setSoloTierImage();
 
@@ -152,44 +193,6 @@ public class SeeInfoActivity extends AppCompatActivity {
         } else if(Objects.equals(MainActivity.FlexTier, "CHALLENGER")) {
             iv_flexTierImage.setImageResource(R.drawable.challenger);
         }
-    }
-
-    private void setProfileImage() {
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                try{
-                    URL url = new URL("http://ddragon.leagueoflegends.com/cdn/6.3.1/img/profileicon/" + MainActivity.profileIconId + ".png");
-
-                    HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-
-                    connection.setDoInput(true);
-                    connection.connect();
-
-                    InputStream is = connection.getInputStream();
-                    bitmap = BitmapFactory.decodeStream(is);
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        thread.start();
-
-        try {
-            thread.join();
-
-            iv_profileIcon.setImageBitmap(bitmap);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // 소환사 이름 세팅
-    private void setName() {
-        tv_name.setText(MainActivity.name);
     }
 
 
