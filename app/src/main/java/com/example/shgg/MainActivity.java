@@ -22,16 +22,16 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     public static String SoloTier = "UNRANK";
-    public static String SoloRank;
+    public static String SoloRank = "I";
     public static String SoloName;
-    public static String SoloWins;
-    public static String SoloLosses;
+    public static String SoloWins = "0";
+    public static String SoloLosses = "0";
 
-    public static String FlexTier;
-    public static String FlexRank;
+    public static String FlexTier = "UNRANK";
+    public static String FlexRank = "I";
     public static String FlexName;
-    public static String FlexWins;
-    public static String FlexLosses;
+    public static String FlexWins = "0";
+    public static String FlexLosses = "0";
 
     public static String name;
     public static String profileIconId;
@@ -130,14 +130,19 @@ public class MainActivity extends AppCompatActivity {
         int su = userInfos.size();
 
         if(su == 1) {
-            System.out.println("작동" + userInfos.get(0).getTier());
             SoloTier = userInfos.get(0).getTier();
             SoloRank = userInfos.get(0).getRank();
             SoloName = userInfos.get(0).getSummonerName();
             SoloWins = userInfos.get(0).getWins();
             SoloLosses = userInfos.get(0).getLosses();
         }
-        if(su > 1) {
+        if(su == 2) {
+            SoloTier = userInfos.get(0).getTier();
+            SoloRank = userInfos.get(0).getRank();
+            SoloName = userInfos.get(0).getSummonerName();
+            SoloWins = userInfos.get(0).getWins();
+            SoloLosses = userInfos.get(0).getLosses();
+
             FlexTier = userInfos.get(1).getTier();
             FlexRank = userInfos.get(1).getRank();
             FlexName = userInfos.get(1).getSummonerName();
