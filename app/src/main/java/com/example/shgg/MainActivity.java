@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public static String FlexLosses;
 
     public static String name;
+    public static String profileIconId;
 
     private Summoner responsevalue;
     private UserInfo userInfo;
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         String id = summoner.getId();
         String name = summoner.getName();
         String level = summoner.getSummonerLevel();
+        profileIconId = summoner.getProfileIconId();
 
         getInfo(id);
 

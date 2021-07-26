@@ -3,8 +3,17 @@ package com.example.shgg;
 public class Summoner {
 
     private String id;
+    private String profileIconId;
     private String name;
     private String summonerLevel;
+
+    public String getProfileIconId() {
+        return profileIconId;
+    }
+
+    public void setProfileIconId(String profileIconId) {
+        this.profileIconId = profileIconId;
+    }
 
     public String getId() {
         return id;
