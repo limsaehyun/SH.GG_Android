@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -56,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 et_name = (EditText) findViewById(R.id.et_name);
                 name = et_name.getText().toString();
 
-                if(name != null) {
-                    getId(name);
+                if(name.equals("") || name == null) {
+                    Toast.makeText(MainActivity.this, "소환사 닉네임을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 } else {
-                    System.out.println("입력값이 없음");
+                    getId(name);
                 }
 
             }
@@ -68,38 +69,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getId(String name) {
+        // API_KEY 받아오기
+        API_KEY = BuildConfig.API_KEY;
 
-        name = et_name.getText().toString();
+        RiotAPI riotAPI = ApiProvider.getInstance().create(RiotAPI.class);
 
-        if(name != null) {
-            // API_KEY 받아오기
-            API_KEY = BuildConfig.API_KEY;
+        Call<Summoner> call = riotAPI.getSummoner(name, API_KEY);
 
-            RiotAPI riotAPI = ApiProvider.getInstance().create(RiotAPI.class);
+        call.enqueue(new Callback<Summoner>() {
+            @Override
+            public void onResponse(Call<Summoner> call, Response<Summoner> response) {
+                responsevalue = response.body();
+                setId(responsevalue);
+            }
 
-            Call<Summoner> call = riotAPI.getSummoner(name, API_KEY);
-
-            call.enqueue(new Callback<Summoner>() {
-                @Override
-                public void onResponse(Call<Summoner> call, Response<Summoner> response) {
-                    responsevalue = response.body();
-                    setId(responsevalue);
-                }
-
-                @Override
-                public void onFailure(Call<Summoner> call, Throwable t) {}
-            });
-        }
-        else {
-            System.out.println("입력해주세요.");
-        }
+            @Override
+            public void onFailure(Call<Summoner> call, Throwable t) {}
+        });
     }
 
     private void setId(Summoner summoner) {
 
         String id = summoner.getId();
-        String name = summoner.getName();
-        String level = summoner.getSummonerLevel();
         profileIconId = summoner.getProfileIconId();
 
         getInfo(id);
@@ -119,10 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<UserInfo>> call, Throwable t) {
-                System.out.println("실패");
-
-            }
+            public void onFailure(Call<List<UserInfo>> call, Throwable t) {}
         });
     }
 

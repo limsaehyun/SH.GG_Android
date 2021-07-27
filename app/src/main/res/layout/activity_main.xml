@@ -25,8 +25,12 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="리그 오브 레전드"/>
-
     </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
 
     <ImageView
         android:id="@+id/iv_title"
@@ -38,7 +42,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="2dp"
         android:background="@color/black"/>
 
     <LinearLayout
@@ -65,12 +69,12 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_marginLeft="20dp"
+    <View
         android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="즐겨찾기"
-        android:textStyle="bold"
-        android:textSize="30dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black" />
+
+
+
 </LinearLayout>
