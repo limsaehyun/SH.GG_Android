@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SHGG"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SeeInfoActivity"></activity>
+        <activity android:name=".NoteActivity"></activity>
+        <activity android:name=".SeeInfoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

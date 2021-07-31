@@ -99,6 +99,7 @@
             android:orientation="vertical"
             android:layout_gravity="center">
             <ImageButton
+                android:layout_gravity="center_horizontal"
                 android:id="@+id/ib_searchPage"
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
@@ -108,6 +109,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="검색"
+                android:layout_gravity="center"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical|left">
+
+            <ImageButton
+                android:id="@+id/ib_notePage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_note" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경기 기록"
                 android:layout_gravity="center"
                 android:textSize="10dp" />
         </LinearLayout>
