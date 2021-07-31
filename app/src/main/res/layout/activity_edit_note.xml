@@ -1,9 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".EditNoteActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/teal_200">
+
+        <TextView
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bmdohyun"
+            android:layout_gravity="center"
+            android:text="대전 기록 에디터" />
+
+        <ImageButton
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical|right"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:id="@+id/ib_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@drawable/ic_next" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+    <RadioGroup
+        android:id="@+id/rg1"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/r1_btn1"
+            android:layout_marginRight="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="승리"
+            android:textStyle="bold"/>
+        <RadioButton
+            android:id="@+id/r1_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="패배"
+            android:textStyle="bold"/>
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="기록할 경기 맴버의 닉네임을 입력해주세요.\n2명에서 게임을 진행 했다면 2명의 닉네임만 적어도 됩니다."/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bmdohyun"
+                android:text="레드팀"
+                android:textColor="#B14747"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:id="@+id/et_redPlayer1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 1" />
+
+            <EditText
+                android:id="@+id/et_redPlayer2"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 2 (선택 사항)" />
+
+            <EditText
+                android:id="@+id/et_redPlayer3"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 3 (선택 사항)" />
+
+            <EditText
+                android:id="@+id/et_redPlayer4"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 4 (선택 사항)" />
+
+            <EditText
+                android:id="@+id/et_redPlayer5"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 5 (선택 사항)" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bmdohyun"
+                android:text="블루팀"
+                android:textColor="#56CDB6"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:id="@+id/et_bluePlayer1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 1" />
+
+            <EditText
+                android:id="@+id/et_bluePlayer2"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 2 (선택 사항)" />
+
+            <EditText
+                android:id="@+id/et_bluePlayer3"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 3 (선택 사항)" />
+
+            <EditText
+                android:id="@+id/et_bluePlayer4"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 4 (선택 사항)" />
+
+            <EditText
+                android:id="@+id/et_bluePlayer5"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="플레이어 5 (선택 사항)" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

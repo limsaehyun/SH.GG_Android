@@ -7,7 +7,9 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -47,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageButton ib_notePage = (ImageButton) findViewById(R.id.ib_notePage);
+
+        ib_notePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, NoteActivity.class));
+            }
+        });
 
         ib_search = (ImageButton) findViewById(R.id.ib_search);
         ib_search.setOnClickListener(new View.OnClickListener() {
