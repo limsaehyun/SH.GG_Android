@@ -18,6 +18,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     Context Ctx;
 
     ArrayList<MainData> arraylist;
+    public static String editWinLose;
+    public static String editRedName;
+    public static String editBlueName;
+
+
 
     public MainAdapter(ArrayList<MainData> arraylist, Context Ctx) { // 생성자
         this.arraylist = arraylist;
@@ -40,6 +45,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         holder.tv_winLose.setText(arraylist.get(position).getTv_winLose());
         holder.tv_redName.setText(arraylist.get(position).getTv_redName());
         holder.tv_blueName.setText(arraylist.get(position).getTv_blueName());
+
+        editWinLose = arraylist.get(position).getTv_winLose();
+        editRedName = arraylist.get(position).getTv_redName();
+        editBlueName = arraylist.get(position).getTv_blueName();
 
         holder.ib_edit.setOnClickListener(new View.OnClickListener() {
             @Override

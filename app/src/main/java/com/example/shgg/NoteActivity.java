@@ -57,9 +57,35 @@ public class NoteActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        MainData mainData = new MainData("승리", "A", "B");
-        arrayList.add(mainData);
+        if(EditNoteActivity.edit) {
+            String redName = "";
+            String blueName = "";
 
-        mainAdapter.notifyDataSetChanged();
+            if(EditNoteActivity.player == 1) {
+                redName += EditNoteActivity.redPlayer1;
+                blueName += EditNoteActivity.bluePlayer1;
+            }
+            if(EditNoteActivity.player == 2) {
+                redName += EditNoteActivity.redPlayer2;        
+                blueName += EditNoteActivity.bluePlayer2;
+            }
+            if(EditNoteActivity.player == 3) {
+                redName += EditNoteActivity.redPlayer3;
+                blueName += EditNoteActivity.bluePlayer3;
+            }
+            if(EditNoteActivity.player == 4) {
+                redName += EditNoteActivity.redPlayer4;
+                blueName += EditNoteActivity.bluePlayer4;
+            }
+            if(EditNoteActivity.player == 5) {
+                redName += EditNoteActivity.redPlayer5;
+                blueName += EditNoteActivity.bluePlayer5;
+            }
+
+            MainData mainData = new MainData(EditNoteActivity.result, redName, blueName);
+            arrayList.add(mainData);
+
+            mainAdapter.notifyDataSetChanged();
+        }
     }
 }
