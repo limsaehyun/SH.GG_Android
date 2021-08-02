@@ -66,7 +66,7 @@ public class NoteActivity extends AppCompatActivity {
                 blueName += EditNoteActivity.bluePlayer1;
             }
             if(EditNoteActivity.player == 2) {
-                redName += EditNoteActivity.redPlayer2;        
+                redName += EditNoteActivity.redPlayer2;
                 blueName += EditNoteActivity.bluePlayer2;
             }
             if(EditNoteActivity.player == 3) {
