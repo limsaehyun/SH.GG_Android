@@ -43,11 +43,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
 
-        FrameLayout frameLayout = (FrameLayout) holder.findViewById(R.id.frame);
+
         if(EditNoteActivity.result.equals("승리")) {
-            frameLayout.setBackgroundResource(R.color.black);
+            holder.frameLayout.setBackgroundResource(R.color.);
         } else {
-            frameLayout.setBackgroundResource(R.color.black);
+            holder.frameLayout.setBackgroundResource(R.color.black);
         }
 
         holder.tv_winLose.setText(arraylist.get(position).getTv_winLose());
@@ -88,6 +88,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         protected TextView tv_blueName;
 
         protected ImageButton ib_edit;
+        protected FrameLayout frameLayout;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -96,6 +97,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
             this.tv_blueName = (TextView) itemView.findViewById(R.id.tv_blueName);
 
             this.ib_edit = (ImageButton) itemView.findViewById(R.id.ib_edit);
+            this.frameLayout = (FrameLayout) itemView.findViewById(R.id.frame);
         }
     }
 
