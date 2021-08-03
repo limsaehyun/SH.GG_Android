@@ -95,7 +95,6 @@ public class NoteActivity extends AppCompatActivity {
                 colorValue[arrayList.size()] = false;
             }
 
-
             MainData mainData = new MainData(EditNoteActivity.result, redName, blueName);
             arrayList.add(mainData);
 

@@ -3,10 +3,12 @@ package com.example.shgg;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,6 +26,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     public static String editRedName;
     public static String editBlueName;
 
+    public static boolean editStatus = false;
 
 
     public MainAdapter(ArrayList<MainData> arraylist, Context Ctx) { // 생성자
@@ -43,7 +46,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
 
-
+        // 승패 색
         if (NoteActivity.colorValue[position]) {
             holder.frameLayout.setBackgroundResource(R.color.myBlueColor);
         } else {
@@ -54,14 +57,29 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         holder.tv_redName.setText(arraylist.get(position).getTv_redName());
         holder.tv_blueName.setText(arraylist.get(position).getTv_blueName());
 
-        editWinLose = arraylist.get(position).getTv_winLose();
-        editRedName = arraylist.get(position).getTv_redName();
-        editBlueName = arraylist.get(position).getTv_blueName();
 
         holder.ib_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Ctx.startActivity(new Intent(Ctx.getApplicationContext(), EditNoteActivity.class));
+            }
+        });
+
+        holder.ib_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(Ctx, view);
+                popupMenu.inflate(R.menu.menu);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        if (item.getItemId() == R.id.action_delete) {
+                            remove(holder.getAdapterPosition());
+                        }
+                        return false;
+                    }
+                });
+                popupMenu.show();
             }
         });
 

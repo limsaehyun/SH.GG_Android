@@ -45,6 +45,8 @@ public class EditNoteActivity extends AppCompatActivity {
 
     public static boolean edit = false;
 
+    int backTime = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +83,7 @@ public class EditNoteActivity extends AppCompatActivity {
         ib_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 redPlayer1 = et_redPlayer1.getText().toString();
                 redPlayer2 = et_redPlayer2.getText().toString();
                 redPlayer3 = et_redPlayer3.getText().toString();
