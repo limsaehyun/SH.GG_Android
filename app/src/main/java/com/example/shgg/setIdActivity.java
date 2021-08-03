@@ -29,6 +29,8 @@ public class setIdActivity extends AppCompatActivity {
                 if(name.equals("")) {
                     Toast.makeText(setIdActivity.this, "소환사 닉네임을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 } else {
+                    MainActivity.tv_bookMarkName.setVisibility(View.VISIBLE);
+                    MainActivity.btn_myId.setVisibility(View.GONE);
                     finish();
                 }
             }

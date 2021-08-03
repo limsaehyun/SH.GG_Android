@@ -5,7 +5,6 @@ public class Summoner {
     private String id;
     private String profileIconId;
     private String name;
-    private String summonerLevel;
 
     public String getProfileIconId() {
         return profileIconId;
@@ -29,13 +28,5 @@ public class Summoner {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getSummonerLevel() {
-        return summonerLevel;
-    }
-
-    public void setSummonerLevel(String summonerLevel) {
-        this.summonerLevel = summonerLevel;
     }
 }

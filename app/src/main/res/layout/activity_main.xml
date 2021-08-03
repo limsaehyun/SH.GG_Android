@@ -86,104 +86,34 @@
                 android:textStyle="bold" />
 
             <RelativeLayout
+                android:gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:background="@color/white"
+                <Button
+                    android:id="@+id/btn_myId"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp">
+                    android:layout_height="150dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="클릭하여 본인 소환사 이름을 등록해주세요"
+                    android:textColor="@color/black"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/iv_profileIcon"
-                        android:layout_width="47dp"
-                        android:layout_height="44dp"
-                        android:layout_marginBottom="44dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/tv_name"
-                        app:srcCompat="@drawable/unrank" />
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_bookMarkName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/bmdohyun"
+                    android:text="현명한 다이브"
+                    android:textSize="40dp" />
 
-                    <TextView
-                        android:id="@+id/tv_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="144dp"
-                        android:text="소환사 닉네임"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/iv_soloTierImage"
-                        app:layout_constraintVertical_bias="0.02" />
-
-                    <ImageView
-                        android:id="@+id/iv_soloTierImage"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#8D000000"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/unrank" />
-
-                    <TextView
-                        android:id="@+id/tv_soloTier"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:text="GOLD"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/iv_profileIcon"
-                        app:layout_constraintStart_toEndOf="@+id/iv_profileIcon"
-                        app:layout_constraintTop_toTopOf="@+id/iv_profileIcon"
-                        app:layout_constraintVertical_bias="0.4" />
-
-                    <TextView
-                        android:id="@+id/tv_soloRank"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="IV"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/tv_soloTier"
-                        app:layout_constraintStart_toEndOf="@+id/tv_soloTier"
-                        app:layout_constraintTop_toTopOf="@+id/tv_soloTier"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <TextView
-                        android:id="@+id/tv_soloWinningRate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="승률 35.9%"
-                        android:textSize="10dp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/iv_soloTierImage"
-                        app:layout_constraintEnd_toEndOf="@+id/iv_profileIcon"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/iv_profileIcon"
-                        app:layout_constraintTop_toBottomOf="@+id/iv_profileIcon" />
-
-                    <TextView
-                        android:id="@+id/tv_soloWinLose"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:text="(8승 14패)"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/tv_soloWinningRate"
-                        app:layout_constraintStart_toEndOf="@+id/tv_soloWinningRate"
-                        app:layout_constraintTop_toTopOf="@+id/tv_soloWinningRate"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
             </RelativeLayout>
 
         </LinearLayout>
