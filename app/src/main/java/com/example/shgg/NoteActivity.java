@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NoteActivity extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class NoteActivity extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     ImageButton ib_searchPage;
     ImageButton ib_add;
+
+    public static Boolean colorValue[] = new Boolean[1000];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,13 @@ public class NoteActivity extends AppCompatActivity {
                 redName += EditNoteActivity.redPlayer5 + "\n";
                 blueName += EditNoteActivity.bluePlayer5 + "\n";
             }
+
+            if(EditNoteActivity.result.equals("승리")) {
+                colorValue[arrayList.size()] = true;
+            } else {
+                colorValue[arrayList.size()] = false;
+            }
+
 
             MainData mainData = new MainData(EditNoteActivity.result, redName, blueName);
             arrayList.add(mainData);

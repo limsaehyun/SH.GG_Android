@@ -44,10 +44,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
 
 
-        if(EditNoteActivity.result.equals("승리")) {
-            holder.frameLayout.setBackgroundResource(R.color.);
+        if (NoteActivity.colorValue[position]) {
+            holder.frameLayout.setBackgroundResource(R.color.myBlueColor);
         } else {
-            holder.frameLayout.setBackgroundResource(R.color.black);
+            holder.frameLayout.setBackgroundResource(R.color.myRedColor);
         }
 
         holder.tv_winLose.setText(arraylist.get(position).getTv_winLose());
