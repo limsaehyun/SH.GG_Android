@@ -1,12 +1,15 @@
 package com.example.shgg;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -56,30 +59,31 @@ public class NoteActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         if(EditNoteActivity.edit) {
+
+
             String redName = "";
             String blueName = "";
 
-            if(EditNoteActivity.player == 1) {
-                redName += EditNoteActivity.redPlayer1;
-                blueName += EditNoteActivity.bluePlayer1;
+            if(EditNoteActivity.player >= 1) {
+                redName += EditNoteActivity.redPlayer1 + "\n";
+                blueName += EditNoteActivity.bluePlayer1 + "\n";
             }
-            if(EditNoteActivity.player == 2) {
-                redName += EditNoteActivity.redPlayer2;
-                blueName += EditNoteActivity.bluePlayer2;
+            if(EditNoteActivity.player >= 2) {
+                redName += EditNoteActivity.redPlayer2 + "\n";
+                blueName += EditNoteActivity.bluePlayer2 + "\n";
             }
-            if(EditNoteActivity.player == 3) {
-                redName += EditNoteActivity.redPlayer3;
-                blueName += EditNoteActivity.bluePlayer3;
+            if(EditNoteActivity.player >= 3) {
+                redName += EditNoteActivity.redPlayer3 + "\n";
+                blueName += EditNoteActivity.bluePlayer3 + "\n";
             }
-            if(EditNoteActivity.player == 4) {
-                redName += EditNoteActivity.redPlayer4;
-                blueName += EditNoteActivity.bluePlayer4;
+            if(EditNoteActivity.player >= 4) {
+                redName += EditNoteActivity.redPlayer4 + "\n";
+                blueName += EditNoteActivity.bluePlayer4 + "\n";
             }
-            if(EditNoteActivity.player == 5) {
-                redName += EditNoteActivity.redPlayer5;
-                blueName += EditNoteActivity.bluePlayer5;
+            if(EditNoteActivity.player >= 5) {
+                redName += EditNoteActivity.redPlayer5 + "\n";
+                blueName += EditNoteActivity.bluePlayer5 + "\n";
             }
 
             MainData mainData = new MainData(EditNoteActivity.result, redName, blueName);

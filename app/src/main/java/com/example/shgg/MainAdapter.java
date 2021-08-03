@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -32,7 +34,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     @NonNull
     @Override
     public MainAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view); // View를 가져온다.
 
@@ -41,6 +42,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
+
+        FrameLayout frameLayout = (FrameLayout) holder.findViewById(R.id.frame);
+        if(EditNoteActivity.result.equals("승리")) {
+            frameLayout.setBackgroundResource(R.color.black);
+        } else {
+            frameLayout.setBackgroundResource(R.color.black);
+        }
 
         holder.tv_winLose.setText(arraylist.get(position).getTv_winLose());
         holder.tv_redName.setText(arraylist.get(position).getTv_redName());
