@@ -13,8 +13,6 @@ android {
 
     defaultConfig {
 
-        buildConfigField "String", "API_KEY", localProperties['KEY']
-
         applicationId "com.example.shgg"
         minSdkVersion 28
         targetSdkVersion 30

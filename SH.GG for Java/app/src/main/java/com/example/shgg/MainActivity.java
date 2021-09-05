@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getId(String name) {
         // API_KEY 받아오기
-        API_KEY = BuildConfig.API_KEY;
+        API_KEY = "hide";
 
         RiotAPI riotAPI = ApiProvider.getInstance().create(RiotAPI.class);
 
