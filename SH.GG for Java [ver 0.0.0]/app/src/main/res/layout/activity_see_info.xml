@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SeeInfoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg">
+
+        <ImageView
+            android:id="@+id/iv_profileIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/unrank" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="소환사 닉네임"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_refresh"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="전적 갱신"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profileIcon"
+            app:layout_constraintStart_toEndOf="@+id/iv_profileIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/btn_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="★즐겨찾기"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_refresh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintStart_toEndOf="@+id/btn_refresh"
+            app:layout_constraintTop_toTopOf="@+id/btn_refresh" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/black"/>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="#57000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_soloTierImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="#8D000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.012"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/unrank" />
+
+            <TextView
+                android:id="@+id/tv_soloTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="4dp"
+                android:text="솔로 랭크"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_soloTier"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_soloTier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GOLD"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.17"
+                app:layout_constraintStart_toEndOf="@+id/iv_soloTierImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_soloRank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="IV"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_soloTier"
+                app:layout_constraintStart_toEndOf="@+id/tv_soloTier"
+                app:layout_constraintTop_toTopOf="@+id/tv_soloTier"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_soloWinningRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="승률 35.9%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_soloTier"
+                app:layout_constraintTop_toBottomOf="@+id/tv_soloTier"
+                app:layout_constraintVertical_bias="0.227" />
+
+            <TextView
+                android:id="@+id/tv_soloWinLose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="(8승 14패)"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_soloWinningRate"
+                app:layout_constraintStart_toEndOf="@+id/tv_soloWinningRate"
+                app:layout_constraintTop_toTopOf="@+id/tv_soloWinningRate"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D7000000"/>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="#57000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_flexTierImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="#8D000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.012"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/unrank" />
+
+            <TextView
+                android:id="@+id/tv_flexTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="4dp"
+                android:text="자유 랭크"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_flexTier"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_flexTier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GOLD"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.17"
+                app:layout_constraintStart_toEndOf="@+id/iv_flexTierImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_flexRank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="IV"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_flexTier"
+                app:layout_constraintStart_toEndOf="@+id/tv_flexTier"
+                app:layout_constraintTop_toTopOf="@+id/tv_flexTier"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_flexWinningRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="승률 35.9%"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_flexTier"
+                app:layout_constraintTop_toBottomOf="@+id/tv_flexTier"
+                app:layout_constraintVertical_bias="0.227" />
+
+            <TextView
+                android:id="@+id/tv_flexWinLose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="(8승 14패)"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_flexWinningRate"
+                app:layout_constraintStart_toEndOf="@+id/tv_flexWinningRate"
+                app:layout_constraintTop_toTopOf="@+id/tv_flexWinningRate"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D7000000"/>
+
+</LinearLayout>
