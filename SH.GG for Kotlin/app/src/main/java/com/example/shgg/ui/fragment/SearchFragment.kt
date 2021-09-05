@@ -22,8 +22,6 @@ class SearchFragment : Fragment() {
     ): View? {
         val binding = FragmentSearchBinding.inflate(inflater, container, false)
 
-        binding.textHome.setText("binding success")
-
         return binding.root
     }
 }
