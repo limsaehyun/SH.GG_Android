@@ -50,3 +50,14 @@ Personal projects for Android study
 - Retrofit : HTTP API를 Java 인터페이스로 변환함
 - Gson : Json의 자바 오브젝트의 직력화, 역직렬화를 해줌
 - RecyclerView : 메모리 사용량을 최소화하면서 UI에 많은 양의 데이터를 표시함
+
+### ScreenShot
+
+---
+
+<img src="https://user-images.githubusercontent.com/80076029/132967599-3804361f-008a-4e6a-9a1c-4d45826f6662.png" width="180px" height="380px" title="Start" alt="시작"></img>
+<img src="https://user-images.githubusercontent.com/80076029/132967603-c3e2fce4-e575-4601-9bf4-82bf592689b9.png" width="180px" height="380px" title="bookmark" alt="등록"></img>
+<img src="https://user-images.githubusercontent.com/80076029/132967605-9ea22e86-4a5f-43be-a039-dc2f19caf00c.png" width="180px" height="380px" title="MainBookmark" alt="등록성공"></img>
+<img src="https://user-images.githubusercontent.com/80076029/132967610-9fa3a605-9030-4f80-b071-4f43d27600a9.png" width="180px" height="380px" title="Search" alt="검색"></img>
+<img src="https://user-images.githubusercontent.com/80076029/132967615-c2675eb7-0816-48e3-bfad-dbe702ff78e9.png" width="180px" height="380px" title="successRecord" alt="기록"></img>
+<img src="https://user-images.githubusercontent.com/80076029/132967613-64e0227b-45f1-4324-837c-1f9764cbd2cd.png" width="180px" height="380px" title="inputRecord" alt="기록입력"></img>
